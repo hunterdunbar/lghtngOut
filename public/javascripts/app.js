@@ -8,7 +8,7 @@ function forceLogin(key) {
 	force.login(function(success) {
 		var oauth = force.getOauth();
 		setupLightning();
-	});	
+	});
 }
 
 var _lightningReady = false;
@@ -29,7 +29,7 @@ function setupLightning(callback) {
 	    // Transform the URL for Lightning
 	    var url = oauth.instanceUrl.replace("my.salesforce", "lightning.force");
 
-	    $Lightning.use(appName, 
+	    $Lightning.use(appName,
 	        function() {
 				_lightningReady = true;
 				document.getElementById("chatterFeedButton").style.display = "";
@@ -41,7 +41,16 @@ function setupLightning(callback) {
 }
 
 function createChatterFeed(type, subjectId) {
-    setupLightning(function() {
-		$Lightning.createComponent("forceChatter:feed", {type: type, subjectId: subjectId}, "chatterFeed"); 
-    });
+	setupLightning(function() {
+		$Lightning.createComponent("ui:button",
+
+					{ label : "Press Me!" },
+
+					"lightning",
+
+					function(cmp) {
+
+						// do some stuff
+					});
+	});
 }
