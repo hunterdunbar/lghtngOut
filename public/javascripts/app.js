@@ -42,9 +42,9 @@ function setupLightning(callback) {
 
 function createChatterFeed(type, subjectId) {
 	setupLightning(function() {
-		$Lightning.createComponent("ui:button",
-
-					{ label : "Press Me!" },
+		$Lightning.createComponent("wave:waveDashboard", {
+                 dashboardId: "0FK36000000DOQlGAO"
+             },
 
 					"lightning",
 
